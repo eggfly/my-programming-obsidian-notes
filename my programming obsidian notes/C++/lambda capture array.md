@@ -89,3 +89,35 @@ foo(int):
         leave
         ret
 ```
+
+## codes
+以下是代码和运行结果
+```
+$ cat a.cpp && echo '---' && gcc --std=c++14 a.cpp && ./a.out
+#include <stdio.h>
+
+int foo1() {
+	int a[3] = {1,2,3};
+	auto fn = [a]() {return a[0] + a[2];};
+	a[0] = 9;
+	return fn();
+}
+
+int foo2() {
+	int a[3] = {1,2,3};
+	auto fn = [b=a]() {return b[0] + b[2];};
+	a[0] = 9;
+	return fn();
+}
+
+int main()
+{
+	printf("foo1()=%d\n", foo1());
+	printf("foo2()=%d\n", foo2());
+	return 0;
+}
+---
+foo1()=4
+foo2()=12
+
+```
