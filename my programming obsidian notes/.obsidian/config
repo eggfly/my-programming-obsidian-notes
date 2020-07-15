@@ -1,0 +1,89 @@
+{
+  "theme": "obsidian",
+  "pluginEnabledStatus": {
+    "File explorer": true,
+    "Search": true,
+    "Quick switcher": true,
+    "Graph view": true,
+    "Backlinks": true,
+    "Command palette": true,
+    "Markdown format importer": true,
+    "Word count": true
+  },
+  "workspaceLayout": {
+    "id": "02c50d205d4fad8f",
+    "type": "split",
+    "children": [
+      {
+        "id": "4ae1946f7b62c08c",
+        "type": "leaf",
+        "active": true,
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "C++/lambda capture array.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "leftSidedock": {
+    "id": "9890a1bae7f2168f",
+    "type": "split",
+    "children": [
+      {
+        "id": "988de8d3b396a141",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3068daaf0225f242",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "1a5159e233af0df4",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "rightSidedock": {
+    "id": "865b66f7d1ef98ab",
+    "type": "split",
+    "children": [
+      {
+        "id": "69ec340b5680e97d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1e93170c4a67a340",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "lastOpenFiles": [
+    "Untitled.md"
+  ],
+  "vimMode": true
+}
