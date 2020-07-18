@@ -22,8 +22,8 @@ int foo() { A().foo(); }
 A::foo()::{lambda()#1}::operator()() const:
         push    rbp
         mov     rbp, rsp
-        mov     QWORD PTR [rbp-8], rdi  // <--- rbp-8 现在是old_rbp-8 的地址
-        mov     rax, QWORD PTR [rbp-8]  // <--- rbp-8 现在是old_rbp-8 的地址
+        mov     QWORD PTR [rbp-8], rdi  // <--- rbp-8 现在是 old_rbp-8 的地址
+        mov     rax, QWORD PTR [rbp-8]  // <--- rax 现在是 old_rbp-8 的地址
         mov     rax, QWORD PTR [rax]    // <--- rax 现在是 old_rbp-8 的内容，也就是 A 的 this指针值
         mov     eax, DWORD PTR [rax+4]  // <--- eax 现在是 A::b 的值
         pop     rbp
