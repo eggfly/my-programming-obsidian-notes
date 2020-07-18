@@ -33,8 +33,8 @@ A::foo():
         mov     rbp, rsp
         sub     rsp, 32
         mov     QWORD PTR [rbp-24], rdi
-        mov     rax, QWORD PTR [rbp-24] // <--- rax现在是 A 的 this 指针值
-        mov     QWORD PTR [rbp-8], rax  // <--- [rbp-8]现在是 A 的 this 指针值
+        mov     rax, QWORD PTR [rbp-24] // <--- rax 现在是 A 的 this 指针值
+        mov     QWORD PTR [rbp-8], rax  // <--- rbp-8 现在是 A 的 this 指针值
         lea     rax, [rbp-8]
         mov     rdi, rax                // <--- rdi 现在是 rbp-8 的地址
         call    A::foo()::{lambda()#1}::operator()() const
@@ -46,8 +46,8 @@ foo():
         sub     rsp, 16
         mov     DWORD PTR [rbp-8], 0
         mov     DWORD PTR [rbp-4], 0
-        lea     rax, [rbp-8] // <--- rax现在是 A 的 this 指针值
-        mov     rdi, rax     // <--- rdi现在是 A 的 this 指针值
+        lea     rax, [rbp-8] // <--- rax 现在是 A 的 this 指针值
+        mov     rdi, rax     // <--- rdi 现在是 A 的 this 指针值
         call    A::foo()
         nop
         leave
