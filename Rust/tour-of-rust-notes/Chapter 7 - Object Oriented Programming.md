@@ -1,5 +1,5 @@
 # 写在前面
-这是我看 https://tourofrust.com/ 的学习笔记。不一定对，请字形辨别。
+这是我看 https://tourofrust.com/ 的学习笔记。不一定对，请自行辨别。
 
 # 74 什么是OOP
 - 封装
