@@ -1,3 +1,5 @@
+#20200722
+
 # 写在前面
 这是我看 https://tourofrust.com/ 的学习笔记。不一定对，请自行辨别。
 
@@ -15,7 +17,7 @@
 # 76 对 method 的封装
 - 不改变 object 的 method 用 &self
 
-```
+``` Rust
 struct A {}
 
 impl A {
@@ -31,7 +33,7 @@ fn main() {
 ```
 
 - 改变 object 的 method 用 &mut self
-```
+``` Rust
 struct A {
     a: i32,
 }
@@ -53,7 +55,7 @@ fn main() {
 - 默认 field 和 method 都是 module 可见的
 - 可以用 `pub` 关键字
 
-```
+``` Rust
 struct A {
     pub a : i32,
 }
@@ -76,7 +78,7 @@ fn main() {
 - trait 类似于 Java 里的 interface 或者 abstract class
 - 用 impl MyTrait for MyStruct 的语法
 
-```
+``` Rust
 struct A {}
 struct B {}
 
@@ -105,7 +107,7 @@ fn main() {
 ```
 
 ## 79 Traits 也可以有默认实现
-```
+``` Rust
 struct A{
     a : i32,
 }
@@ -126,7 +128,7 @@ fn main() {
 注意上面例子里的 b::foo() 并不能访问 A::a.
 
 ## 80 Trait 是可以继承的
-```
+``` Rust
 struct A {}
 
 trait B {
@@ -151,7 +153,7 @@ fn main() {
 }
 ```
 注意 `C : B`是必要的，否则会有如下编译错误
-```
+``` Rust
 struct A {}
 
 trait B {
@@ -191,7 +193,7 @@ help: the following trait defines an item `foo`, perhaps you need to add a super
 
 ### 一个不是 trait 继承的例子
 下面这个例子里，C并没有继承B，但是在A::bar里面是可以调用的self.foo()的
-```
+``` Rust
 struct A {}
 
 trait B {
@@ -226,7 +228,7 @@ fn main() {
 - 如果编译器 run time 才能确定 struct 的类型，就会使用 dynamic dispatch
 - dynamic dispatch 会慢一点
 
-```
+``` Rust
 struct A{}
 
 trait B {
@@ -255,7 +257,7 @@ fn main() {
 ```
 
 对于 dynamic dispatch，鼓励在代码里加上 `dyn` 字眼。如果不加，其实也可以执行；但是会有编译错误：
-```
+``` Rust
 struct A{}
 
 trait B {
@@ -305,7 +307,7 @@ warning: 1 warning emitted
 ## 84 Generic Function
 - 语法是 `fn foo<A>(a: A) where A: B {}`。B必须是 trait。
 - compile time 能确定类型。所以是 static dispatch。
-```
+``` Rust
 struct A {}
 
 trait B {
@@ -359,7 +361,7 @@ fn main() {
 - `Box::new(A {...})`
 - `Box::new(&A)`
 
-```
+``` Rust
 struct A {
     a: i32,
 }
@@ -385,7 +387,7 @@ fn main() {
 ```
 
 ## 87 Generic Struct
-```
+``` Rust
 struct A {}
 
 trait B{
