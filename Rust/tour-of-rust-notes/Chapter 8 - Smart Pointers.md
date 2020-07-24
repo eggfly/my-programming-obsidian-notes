@@ -1,4 +1,5 @@
-#20200722
+#2020-07-22
+#2020-07-24
 
 # 写在前面
 这是我看 https://tourofrust.com/ 的学习笔记。不一定对，请自行辨别。
@@ -173,3 +174,57 @@ fn main() {
     c.foo();
 }
 ```
+
+# 101 `RefCell`
+要么只读不能写，要么只有一个写不能读。
+
+``` Rust
+struct A {}
+
+impl A {
+    fn foo(&mut self) {
+        println!("A::foo(&mut)");
+    }
+
+    fn bar(& self) {
+        println!("A::bar(&)");
+    }
+}
+
+fn main() {
+    let a = std::cell::RefCell::new(A {});
+
+	//注意如果没有下面这对花括号，则再下面的 a.borrow() 会崩溃
+    {
+        let mut mutra = a.borrow_mut();
+        mutra.foo();
+    }
+
+    let ra = a.borrow();
+    let rb = a.borrow();
+    ra.bar();
+    rb.bar();
+}
+```
+
+#TODO `RefCell` 被广泛使用了吗？代价是什么？
+
+# 102 `Mutex`
+```
+struct A {}
+
+impl A {
+    fn foo(&self) {
+        println!("A::foo");
+    }
+}
+
+fn main() {
+    let ma = std::sync::Mutex::new(A {});
+    let refa = ma.lock().unwrap();
+    refa.foo();
+}
+```
+
+# 103 SmartPointer的组合
+略过，因为我还没有掌握那几个数据结构。例子里用的是 `std::rc::Rc<std::cell::RefCell<A>>`
