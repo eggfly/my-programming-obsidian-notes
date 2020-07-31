@@ -17,3 +17,6 @@ Ferris 与形容词“ferrous”相似，它的含义与铁有关。由于 Rust�
 |本地查看rust文档|`rustup doc`||
 |编译 main.rs |`rustc main.rs`||
 |用cargo创建新项目|`cargo new my_project`|[[cargo#cargo new]]|
+
+# 在线跑 Rust 代码的网站
+https://play.rust-lang.org/
