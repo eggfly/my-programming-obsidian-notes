@@ -411,7 +411,7 @@ impl<T> C<T> where T:B { // <--- 看这里
 }
 
 fn main() {
-    let c = C { t : A{} }; // <--- #TODO 这里没有borrow，OK吗？
+    let c = C { t : A{} };
     c.foo();
 }
 ```
