@@ -34,3 +34,13 @@ rand = "0.5.5" // <--- 是 ^0.5.5 的简写，意思是任何兼容 0.5.5 的版
 检查是否能编译，但并不真的编译。
 
 这个比 [[cargo#cargo build]] 快。
+
+# cargo使用国内镜像
+创建`~/.cargo/config`，内容如下：
+```
+[source.crates-io]
+registry = "https://github.com/rust-lang/crates.io-index"
+replace-with = 'ustc'
+[source.ustc]
+registry = "git://mirrors.ustc.edu.cn/crates.io-index"
+```
