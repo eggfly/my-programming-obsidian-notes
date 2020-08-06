@@ -26,8 +26,8 @@ $ gcc a.c && ./a.out
 8 3 4
 ```
 
-# 笔记
-按照常见用法，A的定义会写成
+# 分析 
+按照C99写法，A的定义会写成
 ``` C
 struct A {
     union {
@@ -45,9 +45,9 @@ a.yy.c[1] = 4;
 printf("%u %d %d\n", sizeof(struct A), a.yy.xx.a, a.yy.xx.b);
 ```
 
-可上面的例子里并没有定义这样的`xx`和`yy`，但也能用。
+可上面的例子里并没有定义这样的`xx`和`yy`，但也能用。这是**C11**的标准；另外在C11之前，GCC也有这个扩展。
 
-# 继续探索
+# 更多例子
 下面这个也能用：
 ``` C
 #include <stdio.h>
@@ -94,3 +94,10 @@ int main()
     return 0;
 }
 ```
+
+# 参考链接
+https://www.geeksforgeeks.org/g-fact-38-anonymous-union-and-structure/
+
+https://gcc.gnu.org/onlinedocs/gcc/Unnamed-Fields.html
+
+https://stackoverflow.com/a/8932782
