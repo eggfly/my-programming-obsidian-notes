@@ -1,3 +1,5 @@
+#2020-07
+
 ## Capture by value on array 
 今天我遇到一个 [[lambda]] 对数组 [[capture by value]] 的问题。简而言之就是，以下内容是 [[lambda capture array]] 的。
 

@@ -1,3 +1,5 @@
+#2020-07
+
 ## 问题
 刚刚在 https://www.bfilipek.com/2019/02/lambdas-story-part1.html 看一个东西，发现一个capture class member的例子。我构造来如下代码。问题是：那个lambda capture的是那个类的this指针，还是那个a的int？
 
