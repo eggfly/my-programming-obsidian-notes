@@ -29,7 +29,7 @@ library 的 root module 必须写在 `lib.rs` 里
 - 要么一个文件夹 `foo`，里面有一个文件 `mod.rs`
 
 # 112 Module Hierarchy
-介绍了一个 `mod foo;` 的语法。见[[7. Project, Crate, Module#7 5 把 module 拆成不同文件]]
+介绍了一个 `mod foo;` 的语法。见[[07. Project, Crate, Module#7 5 把 module 拆成不同文件]]
 
 # 113 Inline Sub-Module
 举了一个 unit test 的例子

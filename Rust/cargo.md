@@ -25,7 +25,7 @@ rand = "0.5.5" // <--- 是 ^0.5.5 的简写，意思是任何兼容 0.5.5 的版
 默认文件在 `./target/debug/` 文件夹下。
 
 可能会生成 `cargo.lock` 文件。这个是和项目依赖相关的。
-![[2. Programming a Guessing Game#cargo lock]]
+![[02. Programming a Guessing Game#cargo lock]]
 
 `cargo build --release`
 
