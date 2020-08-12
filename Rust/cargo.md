@@ -1,7 +1,11 @@
 #2020-07
+#2020-08
 
 # cargo new
 空文件下默认会添加`.gitignore`
+
+# cargo init
+添加 toml
 
 # TOML
 TOML - Tom's Obvious, Minimal Lanaguage
