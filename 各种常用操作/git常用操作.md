@@ -14,7 +14,7 @@
 4. 创建 git 项目
 	1. `mkdir ~/xxx.git && cd ~/xxx.git`
 	2. `git init --bare`
-5. 这个git项目的地址是 `myuser@ip:/xxx.git`
+5. 这个git项目的地址是 `myuser@ip:/~/xxx.git`
 6. 为了安全，还可以在 ~/.ssh/authorized_keys 里限制**每一个** client 的行为
 ```
 no-port-forwarding,no-X11-forwarding,no-agent-forwarding,no-pty
@@ -47,3 +47,6 @@ crlf->lf    lf->crlf     crlf->lf       \             /          \
 错误类似 ` modified: "\345\220/\234.md"`
 这是因为 git 默认对 非ascii 的路径字符都 quote。
 可以这样解决 `git config --global core.quotepath false`
+
+# git track 到已有branch
+`git branch -u origin/master`
