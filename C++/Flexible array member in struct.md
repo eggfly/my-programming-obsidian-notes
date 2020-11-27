@@ -52,11 +52,11 @@ qux:
 ```
 
 # 理论
-- 这个`int xxx[]`叫 flexible array members，是 C99 的东西。
-- 注意`int xxx[0]` 不是 flexible array member。。。
+- 这个`int xxx[]`叫 `flexible array members`，是 `C99` 的东西。
+- 注意`int xxx[0]` 不是 `flexible array member`。。。
 
 # 限制
-- 那个 flexible array member 必须是 struct 的最后一个成员。
+- 那个 `flexible array member` 必须是 `struct` 的最后一个成员。
 ``` C
 struct A {
     int xxx[]; // <--- 这个通不过编译。因为不是最后一个成员。
@@ -69,7 +69,7 @@ struct B {
 };
 ```
 
-- struct 里必须要除了 flexiable array member 外的其他东西。
+- `struct` 里必须要除了 `flexiable array member` 外的其他东西。
 ``` C
 struct A {
     int xxx[]; // <--- 这个通不过编译。因为没有 named member

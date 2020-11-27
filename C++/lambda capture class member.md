@@ -1,7 +1,7 @@
 #2020-07
 
 ## 问题
-刚刚在 https://www.bfilipek.com/2019/02/lambdas-story-part1.html 看一个东西，发现一个capture class member的例子。我构造来如下代码。问题是：那个lambda capture的是那个类的this指针，还是那个a的int？
+刚刚在 https://www.bfilipek.com/2019/02/lambdas-story-part1.html 看一个东西，发现一个`capture class member`的例子。我构造来如下代码。问题是：那个`lambda capture`的是那个类的`this`指针，还是那个`a`的`int`？
 
 ```
 struct A
@@ -18,7 +18,7 @@ int foo() { A().foo(); }
 ```
 
 ## 答案
-是 this 指针。通过在 https://godbolt.org/ 上编译看汇编，有如下结果
+是 `this` 指针。通过在 https://godbolt.org/ 上编译看汇编，有如下结果
 
 ```
 A::foo()::{lambda()#1}::operator()() const:

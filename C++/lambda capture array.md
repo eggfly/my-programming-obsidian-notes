@@ -1,7 +1,7 @@
 #2020-07
 
 ## Capture by value on array 
-今天我遇到一个 [[lambda]] 对数组 [[capture by value]] 的问题。简而言之就是，以下内容是 [[lambda capture array]] 的。
+今天我遇到一个 [[`lambda`]] 对数组 [[`capture by value`]] 的问题。简而言之就是，以下内容是 [[`lambda capture array`]] 的。
 
 ```
 int foo(int num) {
@@ -12,7 +12,7 @@ int foo(int num) {
 }
 ```
 
-在 [[https://godbolt.org/]] 上看汇编，是这样的 (注释是我写的，我用 old_rbp 来指代foo(int) 中的那个 rbp， 因为我不知道怎么表示 )：
+在 [[https://godbolt.org/]] 上看汇编，是这样的 (注释是我写的，我用 `old_rbp` 来指代`foo(int)` 中的那个 `rbp`， 因为我不知道怎么表示 )：
 
 ```
 foo(int)::{lambda()#1}::operator()() const:
@@ -46,10 +46,10 @@ foo(int):
         ret
 ```
 
-可见，确实是把a拷贝一遍再去算的。我之前以为a是一个指针，数组内容不会被拷贝，我的理解是错的。
+可见，确实是把`a`拷贝一遍再去算的。我之前以为`a`是一个指针，数组内容不会被拷贝，我的理解是错的。
 
 ## 变化
-但如下代码，则不会拷贝a那个数组的内容。变化就是lambda capture的时候用了b=a.
+但如下代码，则不会拷贝`a`那个数组的内容。变化就是`lambda capture`的时候用了`b=a`.
 ```
 int foo(int num) {
     int a[3] = {1,2,3};
@@ -58,7 +58,7 @@ int foo(int num) {
     return fn();
 }
 ```
-在 [[https://godbolt.org/]] 上看汇编，是这样的 (注释是我写的，我用 old_rbp 来指代foo(int) 中的那个 rbp， 因为我不知道怎么表示 )：
+在 [[https://godbolt.org/]] 上看汇编，是这样的 (注释是我写的，我用 `old_rbp` 来指代`foo(int)` 中的那个 `rbp`， 因为我不知道怎么表示 )：
 ```
 foo(int)::{lambda()#1}::operator()() const:
         push    rbp
