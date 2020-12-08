@@ -12,3 +12,7 @@ Param(
 ```powershell
 powershell foo.ps1 -b xxxxx
 ```
+
+# 管道后过滤文本
+
+`xxx | Select-String xxx`
